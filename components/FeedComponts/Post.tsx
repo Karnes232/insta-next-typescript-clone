@@ -10,6 +10,7 @@ import Header from './PostComponents/Header';
 import InputBox from './PostComponents/InputBox';
 import Buttons from './PostComponents/Buttons';
 import Caption from './PostComponents/Caption';
+import Image from 'next/image';
 
 interface Props {
   id: string,
@@ -34,7 +35,12 @@ const Post = ({ id, username, userImg, img, caption }: Props) => {
     <div className='bg-white my-7 border rounded-sm'>
       <Header username={username} userImg={userImg} />
 
-      <img src={img} alt="" className='object-cover w-full' />
+      <Image 
+        src={img}
+        height={430.88}
+        width={766}
+        className='object-cover  w-full'
+      />
 
       {session && (
         <Buttons id={id}/>
